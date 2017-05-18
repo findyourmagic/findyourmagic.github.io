@@ -34,6 +34,17 @@
   word-break: break-all;
 }
 
+.post-content > table {
+  border-collapse: collapse;
+  text-align: center;
+  width: 100%;
+  font-size: 12px;
+}
+
+.post-content > table th, .post-content > table td {
+  padding: 5px;
+}
+
 #ds-thread {
   margin: 0 30px!important
 }
