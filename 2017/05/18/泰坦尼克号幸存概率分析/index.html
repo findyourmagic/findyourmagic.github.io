@@ -1,13 +1,94 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Daniel"><title>泰坦尼克号幸存概率分析 · G's island</title><meta name="description" content="1234import pandas as pdimport seaborn as snsimport matplotlib.pyplot as plt%matplotlib inline
-1titanic = pd.read_csv('titanic-data.csv')
-问题
-探索titanic数"><meta name="keywords" content="hexo,前端,node,统计"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">G's island</a></h3><div class="description"><p>G's island.</p></div></div></div><ul class="social-links"></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai</a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li></div><div class="information"><div class="back_btn"><li><a onclick="window.history.go(-1)" class="fa fa-chevron-left"> </a></li></div><div class="avatar"><img src="https://avatars1.githubusercontent.com/u/3908212?v=3&amp;s=100"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>泰坦尼克号幸存概率分析</a></h3></div><div class="post-content"><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</div><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div><div class="line">%matplotlib inline</div></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">titanic = pd.read_csv(<span class="string">'titanic-data.csv'</span>)</div></pre></td></tr></table></figure>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta name="keywords" content="Jax">
+    <title>
+        Jax.show
+    </title>
+    <!-- favicon -->
+    
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- highlight -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/github-gist.min.css">
+    <script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad()
+    </script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-infinite-scroll@1.0.0/dist/hexo-infinite-scroll.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-infinite-scroll@1.0.0/dist/hexo-infinite-scroll.min.js"></script>
+    <script>
+        infiniteScroll()
+
+        // for mobile menu
+        $(function () {
+            $('.social-button').click(function () {
+                if ($('.social-links').hasClass('hide-links')) {
+                    $('.social-links').removeClass('hide-links')
+                } else {
+                    $('.social-links').addClass('hide-links')
+                }
+            })
+        })
+    </script>
+</head>
+
+    <body style="background: url(https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/button-bg.png) #f3f3f3">
+        <div class="container">
+            <header class="header">
+    <h1 class="title">
+        <a href="/" class="logo">
+            Jax.show
+        </a>
+    </h1>
+    <h2 class="desc">
+        Coding changes the world.
+    </h2>
+
+    <nav class="links">
+        <button class="social-button">
+            menu
+        </button>
+        <ul class="social-links hide-links">
+            
+                <li>
+                    <a href="https://github.com/findyourmagic">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
+    </nav>
+</header>
+                <main class="main">
+                    <article class="post">
+    
+            <h2 class="post-title">
+                泰坦尼克号幸存概率分析
+            </h2>
+            <ul class="post-date">
+                <li>
+                    2017-05-18
+                </li>
+                <li>
+                    Jax
+                </li>
+            </ul>
+            <div class="post-content">
+                <p>经典的数据集，包括泰坦尼克号上 2224 名乘客和船员中 891 名的人口学数据和乘客基本信息，来自kaggle。</p>
+<a id="more"></a>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">%matplotlib inline</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">titanic = pd.read_csv(<span class="string">'titanic-data.csv'</span>)</span><br></pre></td></tr></table></figure>
 <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ol>
 <li>探索titanic数据的问题</li>
 <li>找到生还率最高的人群</li>
 </ol>
-<h2 id="数据探索"><a href="#数据探索" class="headerlink" title="数据探索"></a>数据探索</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">titanic.head()</div></pre></td></tr></table></figure>
+<h2 id="数据探索"><a href="#数据探索" class="headerlink" title="数据探索"></a>数据探索</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">titanic.head()</span><br></pre></td></tr></table></figure>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -106,7 +187,7 @@
 </table>
 
 <h3 id="数据字段说明"><a href="#数据字段说明" class="headerlink" title="数据字段说明"></a>数据字段说明</h3><p>PassengerId：乘客编号，Survived：乘客是否存活，Pclass：乘客所在的船舱等级；Name：乘客姓名，Sex：乘客性别，Age：乘客年龄，SibSp：乘客的兄弟姐妹和配偶数量，Parch：乘客的父母与子女数量，Ticket：票的编号，Fare：票价，Cabin：座位号，Embarked：乘客登船码头</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">titanic.info()</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">titanic.info()</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;class &apos;pandas.core.frame.DataFrame&apos;&gt;
 RangeIndex: 891 entries, 0 to 890
 Data columns (total 12 columns):
@@ -127,7 +208,7 @@ memory usage: 83.6+ KB
 </code></pre><h3 id="数据异常观察"><a href="#数据异常观察" class="headerlink" title="数据异常观察"></a>数据异常观察</h3><p>座位号数据较少只有204条，猜测可能因为低等仓不分座位吧。</p>
 <p>年龄数据有714条，缺了177条，对于买船票的人来说登记年龄不是必须的，所以这个量属于正常。</p>
 <p>登船码头数据缺了两条，可能是返程的船员或者偷偷溜上船。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">embarked_group = titanic.groupby(<span class="string">'Embarked'</span>)</div><div class="line"><span class="keyword">print</span> embarked_group[<span class="string">'Cabin'</span>].count()</div><div class="line"><span class="keyword">print</span> embarked_group[<span class="string">'PassengerId'</span>].count()</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">embarked_group = titanic.groupby(<span class="string">'Embarked'</span>)</span><br><span class="line"><span class="keyword">print</span> embarked_group[<span class="string">'Cabin'</span>].count()</span><br><span class="line"><span class="keyword">print</span> embarked_group[<span class="string">'PassengerId'</span>].count()</span><br></pre></td></tr></table></figure>
 <pre><code>Embarked
 C     69
 Q      4
@@ -140,9 +221,9 @@ S    644
 Name: PassengerId, dtype: int64
 </code></pre><p>验证猜测：座位号数据较少只有204条，猜测可能因为低等仓不分座位吧。</p>
 <p><strong>根据数据来看每个仓位都有座位号缺失的情况，看起来应该是座位登记表跟着titanic遗失了，并不是因为低等仓不分配座位。</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">titanic.isnull().groupby(<span class="string">'Embarked'</span>).groups[<span class="keyword">True</span>]</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">titanic.isnull().groupby(<span class="string">'Embarked'</span>).groups[<span class="keyword">True</span>]</span><br></pre></td></tr></table></figure>
 <pre><code>Int64Index([61, 829], dtype=&apos;int64&apos;)
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">print</span> titanic.iloc[<span class="number">61</span>]</div><div class="line"><span class="keyword">print</span> titanic.iloc[<span class="number">829</span>]</div><div class="line"><span class="keyword">print</span> titanic.iloc[<span class="number">61</span>] == titanic.iloc[<span class="number">829</span>]</div></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> titanic.iloc[<span class="number">61</span>]</span><br><span class="line"><span class="keyword">print</span> titanic.iloc[<span class="number">829</span>]</span><br><span class="line"><span class="keyword">print</span> titanic.iloc[<span class="number">61</span>] == titanic.iloc[<span class="number">829</span>]</span><br></pre></td></tr></table></figure>
 <pre><code>PassengerId                     62
 Survived                         1
 Pclass                           1
@@ -185,11 +266,11 @@ dtype: bool
 </code></pre><p>验证猜测：登船码头数据缺了两条，可能是返程的船员或者偷偷溜上船。</p>
 <p><strong>首先找到两条登船码头缺失的记录</strong></p>
 <p><strong>接着看了下两条记录的不同之处，接着发现了一些共同点，比如船票是同一张，都是女性且都获救等等，船票是同一张有些可疑；</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ticket_count = titanic.groupby(<span class="string">'Ticket'</span>)[<span class="string">'PassengerId'</span>].count()</div><div class="line">ticket_count.name = <span class="string">'count of passengers under same ticket'</span></div><div class="line">sns.distplot(ticket_count)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ticket_count = titanic.groupby(<span class="string">'Ticket'</span>)[<span class="string">'PassengerId'</span>].count()</span><br><span class="line">ticket_count.name = <span class="string">'count of passengers under same ticket'</span></span><br><span class="line">sns.distplot(ticket_count)</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x11988ad10&gt;
 </code></pre><p><img src="output_14_1.png" alt="png"></p>
 <p>根据使用同张船票的乘客分布来看，大部分乘客都是一张票但是共用船票的情况也很常见，所以确实存在套票等</p>
-<h2 id="单变量探索"><a href="#单变量探索" class="headerlink" title="单变量探索"></a>单变量探索</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">titanic.describe()</div></pre></td></tr></table></figure>
+<h2 id="单变量探索"><a href="#单变量探索" class="headerlink" title="单变量探索"></a>单变量探索</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">titanic.describe()</span><br></pre></td></tr></table></figure>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -287,7 +368,7 @@ dtype: bool
   </tbody>
 </table>
 
-<h3 id="年龄分布："><a href="#年龄分布：" class="headerlink" title="年龄分布："></a>年龄分布：</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">titanic[<span class="string">'Age'</span>].hist()</div></pre></td></tr></table></figure>
+<h3 id="年龄分布："><a href="#年龄分布：" class="headerlink" title="年龄分布："></a>年龄分布：</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">titanic[<span class="string">'Age'</span>].hist()</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x10f72f350&gt;
 </code></pre><p><img src="output_19_1.png" alt="png"></p>
 <p>PS:Age属性缺失的数据已经被自动过滤</p>
@@ -295,53 +376,53 @@ dtype: bool
 <p>所以通过计算把年龄段转换为分类变量:把18岁以下的作为『儿童』，18~50岁之间的作为『中年』，50岁以上的作为『老年』。</p>
 <p>下面也会把根据年龄的分组作为分析的一个主要变量。</p>
 <p>Age属性缺失的数据不转换。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">getAgeGroup</span><span class="params">(age)</span>:</span></div><div class="line">    <span class="keyword">if</span> age &lt; <span class="number">18</span>:</div><div class="line">        <span class="keyword">return</span> <span class="string">'child'</span></div><div class="line">    <span class="keyword">elif</span> age &lt; <span class="number">50</span>:</div><div class="line">        <span class="keyword">return</span> <span class="string">'middle'</span></div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> <span class="string">'old'</span></div><div class="line"></div><div class="line">titanic[<span class="string">'AgeGroup'</span>] = titanic[<span class="string">'Age'</span>].dropna().apply(getAgeGroup)</div><div class="line"></div><div class="line">ageGroup = titanic.groupby(<span class="string">'AgeGroup'</span>)[<span class="string">'PassengerId'</span>].count()</div><div class="line"></div><div class="line">ageGroup.name = <span class="string">'Age Group'</span></div><div class="line"></div><div class="line">ageGroup.plot.pie(figsize=(<span class="number">6</span>, <span class="number">6</span>), autopct=<span class="string">'%.2f%%'</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getAgeGroup</span><span class="params">(age)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> age &lt; <span class="number">18</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'child'</span></span><br><span class="line">    <span class="keyword">elif</span> age &lt; <span class="number">50</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'middle'</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'old'</span></span><br><span class="line"></span><br><span class="line">titanic[<span class="string">'AgeGroup'</span>] = titanic[<span class="string">'Age'</span>].dropna().apply(getAgeGroup)</span><br><span class="line"></span><br><span class="line">ageGroup = titanic.groupby(<span class="string">'AgeGroup'</span>)[<span class="string">'PassengerId'</span>].count()</span><br><span class="line"></span><br><span class="line">ageGroup.name = <span class="string">'Age Group'</span></span><br><span class="line"></span><br><span class="line">ageGroup.plot.pie(figsize=(<span class="number">6</span>, <span class="number">6</span>), autopct=<span class="string">'%.2f%%'</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x10f937ad0&gt;
 </code></pre><p><img src="output_22_1.png" alt="png"></p>
 <p>根据年龄分组后的饼图，可以看出儿童占有年龄统计乘客数的15.83%，还有10.36%是老人，剩下73.81%是中年人</p>
-<h3 id="性别分布"><a href="#性别分布" class="headerlink" title="性别分布"></a>性别分布</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sex_group = titanic.groupby(<span class="string">'Sex'</span>)[<span class="string">'PassengerId'</span>].count()</div><div class="line">sex_group.name = <span class="string">'Sex'</span></div><div class="line">sex_group.plot.pie(figsize=(<span class="number">6</span>, <span class="number">6</span>), autopct=<span class="string">'%.2f%%'</span>)</div></pre></td></tr></table></figure>
+<h3 id="性别分布"><a href="#性别分布" class="headerlink" title="性别分布"></a>性别分布</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sex_group = titanic.groupby(<span class="string">'Sex'</span>)[<span class="string">'PassengerId'</span>].count()</span><br><span class="line">sex_group.name = <span class="string">'Sex'</span></span><br><span class="line">sex_group.plot.pie(figsize=(<span class="number">6</span>, <span class="number">6</span>), autopct=<span class="string">'%.2f%%'</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1114facd0&gt;
 </code></pre><p><img src="output_25_1.png" alt="png"></p>
 <p>从性别分布来看男性占了64.76%，女性占了35.24</p>
-<h3 id="船票价格分布"><a href="#船票价格分布" class="headerlink" title="船票价格分布"></a>船票价格分布</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">titanic[<span class="string">'Fare'</span>].hist()</div></pre></td></tr></table></figure>
+<h3 id="船票价格分布"><a href="#船票价格分布" class="headerlink" title="船票价格分布"></a>船票价格分布</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">titanic[<span class="string">'Fare'</span>].hist()</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x113816bd0&gt;
 </code></pre><p><img src="output_28_1.png" alt="png"></p>
 <p>从船票价格分布来看，绝大多数乘客(约750位)的船票在0~50美元区间，100位乘客的船票在50~100美元，最高的票价达到500美元</p>
-<h3 id="乘客的兄弟姐妹和配偶数量分布"><a href="#乘客的兄弟姐妹和配偶数量分布" class="headerlink" title="乘客的兄弟姐妹和配偶数量分布"></a>乘客的兄弟姐妹和配偶数量分布</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">titanic[<span class="string">'SibSp'</span>].hist()</div></pre></td></tr></table></figure>
+<h3 id="乘客的兄弟姐妹和配偶数量分布"><a href="#乘客的兄弟姐妹和配偶数量分布" class="headerlink" title="乘客的兄弟姐妹和配偶数量分布"></a>乘客的兄弟姐妹和配偶数量分布</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">titanic[<span class="string">'SibSp'</span>].hist()</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x113a33750&gt;
 </code></pre><p><img src="output_31_1.png" alt="png"></p>
 <p>大多数乘客(600个左右)都没有兄弟姐妹或配偶，有200个乘客有一个兄弟姐妹或配偶，零星乘客有2个及以上兄弟姐妹及配偶</p>
-<h3 id="乘客的父母与子女数量"><a href="#乘客的父母与子女数量" class="headerlink" title="乘客的父母与子女数量"></a>乘客的父母与子女数量</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">titanic[<span class="string">'Parch'</span>].hist()</div></pre></td></tr></table></figure>
+<h3 id="乘客的父母与子女数量"><a href="#乘客的父母与子女数量" class="headerlink" title="乘客的父母与子女数量"></a>乘客的父母与子女数量</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">titanic[<span class="string">'Parch'</span>].hist()</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x113b88710&gt;
 </code></pre><p><img src="output_34_1.png" alt="png"></p>
 <p>大多数乘客都没有和父母或子女同行，约有100个乘客与一个父母或子女同行，约有90个乘客与两个父母或子女同行</p>
-<h3 id="舱位分布"><a href="#舱位分布" class="headerlink" title="舱位分布"></a>舱位分布</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">pclass_group = titanic.groupby(<span class="string">'Pclass'</span>)[<span class="string">'PassengerId'</span>].count()</div><div class="line">pclass_group.name =<span class="string">'Pclass'</span></div><div class="line">pclass_group.plot.pie(figsize=(<span class="number">6</span>, <span class="number">6</span>), autopct=<span class="string">'%.2f%%'</span>)</div></pre></td></tr></table></figure>
+<h3 id="舱位分布"><a href="#舱位分布" class="headerlink" title="舱位分布"></a>舱位分布</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pclass_group = titanic.groupby(<span class="string">'Pclass'</span>)[<span class="string">'PassengerId'</span>].count()</span><br><span class="line">pclass_group.name =<span class="string">'Pclass'</span></span><br><span class="line">pclass_group.plot.pie(figsize=(<span class="number">6</span>, <span class="number">6</span>), autopct=<span class="string">'%.2f%%'</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x115f2af90&gt;
 </code></pre><p><img src="output_37_1.png" alt="png"></p>
 <p>从比例分布看三等舱占55%，二等舱最少占21%左右，一等舱约占24%</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pclass_group.plot.bar()</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pclass_group.plot.bar()</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1144c9a90&gt;
 </code></pre><p><img src="output_39_1.png" alt="png"></p>
 <p>从数量分布来看三等舱有500个左右，一等舱、二等舱均在200上下</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">embarked_group = titanic.groupby(<span class="string">'Embarked'</span>)[<span class="string">'PassengerId'</span>].count()</div><div class="line">embarked_group.name =<span class="string">'Embarked'</span></div><div class="line">embarked_group.plot.pie(figsize=(<span class="number">6</span>, <span class="number">6</span>), autopct=<span class="string">'%.2fc%%'</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">embarked_group = titanic.groupby(<span class="string">'Embarked'</span>)[<span class="string">'PassengerId'</span>].count()</span><br><span class="line">embarked_group.name =<span class="string">'Embarked'</span></span><br><span class="line">embarked_group.plot.pie(figsize=(<span class="number">6</span>, <span class="number">6</span>), autopct=<span class="string">'%.2fc%%'</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x114443050&gt;
 </code></pre><p><img src="output_41_1.png" alt="png"></p>
 <p>登船码头的比例分布：</p>
 <p>72.44%的乘客都从『S』码头登船，18.9%的乘客从『C』码头登船，8.66%的乘客从『Q』码头登船</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">embarked_group.plot.bar()</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">embarked_group.plot.bar()</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1146f9990&gt;
 </code></pre><p><img src="output_43_1.png" alt="png"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">survived_group = titanic.groupby(<span class="string">'Survived'</span>)[<span class="string">'PassengerId'</span>].count()</div><div class="line">survived_group.name =<span class="string">'Servived'</span></div><div class="line">survived_group.plot.pie(figsize=(<span class="number">6</span>, <span class="number">6</span>), autopct=<span class="string">'%.2f%%'</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">survived_group = titanic.groupby(<span class="string">'Survived'</span>)[<span class="string">'PassengerId'</span>].count()</span><br><span class="line">survived_group.name =<span class="string">'Servived'</span></span><br><span class="line">survived_group.plot.pie(figsize=(<span class="number">6</span>, <span class="number">6</span>), autopct=<span class="string">'%.2f%%'</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x119d00810&gt;
 </code></pre><p><img src="output_44_1.png" alt="png"></p>
 <p>样本中幸存者的比例在38.38%，遇难者占了61.62%</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">survived_group.plot.bar()</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">survived_group.plot.bar()</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x114ba74d0&gt;
 </code></pre><p><img src="output_46_1.png" alt="png"></p>
 <p>样本中有550位左右遇难者和340位左右的幸存者</p>
 <h2 id="幸存与各变量的相关度分析"><a href="#幸存与各变量的相关度分析" class="headerlink" title="幸存与各变量的相关度分析"></a>幸存与各变量的相关度分析</h2><p>首先看下各变量和是否幸存之间的相关度。</p>
 <p>为了计算方便把 Sex 和 AgeGroup 都转换为数字。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">titanic[<span class="string">'SexBool'</span>] = titanic[<span class="string">'Sex'</span>] == <span class="string">'male'</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">numberic_age</span><span class="params">(age_group)</span>:</span></div><div class="line">    <span class="keyword">if</span> age_group == <span class="string">'child'</span>:</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span></div><div class="line">    <span class="keyword">elif</span> age_group == <span class="string">'middle'</span>:</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span></div><div class="line">    <span class="keyword">elif</span> age_group == <span class="string">'old'</span>:</div><div class="line">        <span class="keyword">return</span> <span class="number">2</span></div><div class="line">    </div><div class="line">titanic[<span class="string">'AgeGroupNumber'</span>] = titanic[<span class="string">'AgeGroup'</span>].apply(numberic_age)</div><div class="line"></div><div class="line">pearsonr = titanic.corr()</div><div class="line"></div><div class="line"><span class="keyword">print</span> pearsonr[[<span class="string">'Survived'</span>, <span class="string">'Pclass'</span>, <span class="string">'Age'</span>, <span class="string">'SibSp'</span>, <span class="string">'Parch'</span>, <span class="string">'SexBool'</span>, <span class="string">'AgeGroupNumber'</span>]]</div><div class="line"></div><div class="line"><span class="keyword">print</span> pearsonr[<span class="string">'Survived'</span>].sort_values()</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">titanic[<span class="string">'SexBool'</span>] = titanic[<span class="string">'Sex'</span>] == <span class="string">'male'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">numberic_age</span><span class="params">(age_group)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> age_group == <span class="string">'child'</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">elif</span> age_group == <span class="string">'middle'</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> age_group == <span class="string">'old'</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">    </span><br><span class="line">titanic[<span class="string">'AgeGroupNumber'</span>] = titanic[<span class="string">'AgeGroup'</span>].apply(numberic_age)</span><br><span class="line"></span><br><span class="line">pearsonr = titanic.corr()</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> pearsonr[[<span class="string">'Survived'</span>, <span class="string">'Pclass'</span>, <span class="string">'Age'</span>, <span class="string">'SibSp'</span>, <span class="string">'Parch'</span>, <span class="string">'SexBool'</span>, <span class="string">'AgeGroupNumber'</span>]]</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> pearsonr[<span class="string">'Survived'</span>].sort_values()</span><br></pre></td></tr></table></figure>
 <pre><code>                Survived    Pclass       Age     SibSp     Parch   SexBool  \
 PassengerId    -0.005007 -0.035144  0.036847 -0.057527 -0.001652  0.042939   
 Survived        1.000000 -0.338481 -0.077221 -0.035322  0.081629 -0.543351   
@@ -375,48 +456,48 @@ Survived          1.000000
 Name: Survived, dtype: float64
 </code></pre><p>可以看出来和是否幸存相关度最高的分别是 SexBool、Pclass、AgeGroupNumber。</p>
 <p>用这三个属性分别和Survived结合进行观察。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">titanic.groupby([<span class="string">'Survived'</span>, <span class="string">'Sex'</span>])[<span class="string">'PassengerId'</span>].count().plot.pie(figsize=(<span class="number">6</span>, <span class="number">6</span>), autopct=<span class="string">'%.2f%%'</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">titanic.groupby([<span class="string">'Survived'</span>, <span class="string">'Sex'</span>])[<span class="string">'PassengerId'</span>].count().plot.pie(figsize=(<span class="number">6</span>, <span class="number">6</span>), autopct=<span class="string">'%.2f%%'</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x11127ce50&gt;
 </code></pre><p><img src="output_52_1.png" alt="png"></p>
 <p>结合是否幸存和性别来看，占样本数26%的女性幸存，只有占样本数12%的男性幸存</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">titanic.groupby(<span class="string">'Sex'</span>)[<span class="string">'Survived'</span>].mean().plot.bar()</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">titanic.groupby(<span class="string">'Sex'</span>)[<span class="string">'Survived'</span>].mean().plot.bar()</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x113a3bdd0&gt;
 </code></pre><p><img src="output_54_1.png" alt="png"></p>
 <p>根据性别和幸存率来看，女性的幸存比率达到75%左右，而男性在20%左右</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">titanic.groupby([<span class="string">'Survived'</span>, <span class="string">'Pclass'</span>])[<span class="string">'PassengerId'</span>].count().plot.pie(figsize=(<span class="number">6</span>, <span class="number">6</span>), autopct=<span class="string">'%.2f%%'</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">titanic.groupby([<span class="string">'Survived'</span>, <span class="string">'Pclass'</span>])[<span class="string">'PassengerId'</span>].count().plot.pie(figsize=(<span class="number">6</span>, <span class="number">6</span>), autopct=<span class="string">'%.2f%%'</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1141b91d0&gt;
 </code></pre><p><img src="output_56_1.png" alt="png"></p>
 <p>从比例分布看一等舱的幸存者比例占样本乘客数的15.26%，二等舱占9.76，三等舱占13.36
 而遇难者比例三等舱占了41.75，二等舱占10.89，一等舱占8.98%</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">titanic.groupby(<span class="string">'Pclass'</span>)[<span class="string">'Survived'</span>].mean().plot.bar()</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">titanic.groupby(<span class="string">'Pclass'</span>)[<span class="string">'Survived'</span>].mean().plot.bar()</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1143cdf10&gt;
 </code></pre><p><img src="output_58_1.png" alt="png"></p>
 <p>综合船舱等级和幸存率来看：一等舱的幸存率最高达到65%，二等舱幸存率接近50%，三等舱幸存率只有25%左右</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">titanic.groupby([<span class="string">'Survived'</span>, <span class="string">'AgeGroup'</span>])[<span class="string">'PassengerId'</span>].count().plot.pie(figsize=(<span class="number">6</span>, <span class="number">6</span>), autopct=<span class="string">'%.2f%%'</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">titanic.groupby([<span class="string">'Survived'</span>, <span class="string">'AgeGroup'</span>])[<span class="string">'PassengerId'</span>].count().plot.pie(figsize=(<span class="number">6</span>, <span class="number">6</span>), autopct=<span class="string">'%.2f%%'</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x11456c610&gt;
 </code></pre><p><img src="output_60_1.png" alt="png"></p>
 <p>结合年龄段来看，幸存者占样本比例最高的是中年人占28.29，儿童占8.54，老人占3.78</p>
 <p>而遇难者占样本比例最高的也是中年人占45.52%，儿童占7.28，老人占6.58%</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">titanic.groupby(<span class="string">'AgeGroup'</span>)[<span class="string">'Survived'</span>].mean().plot.bar()</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">titanic.groupby(<span class="string">'AgeGroup'</span>)[<span class="string">'Survived'</span>].mean().plot.bar()</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x114595a10&gt;
 </code></pre><p><img src="output_62_1.png" alt="png"></p>
 <p>结合年龄段和幸存率看儿童的幸存率最高55%左右，成年人的幸存率比较接近都在35%~40%之间</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">final_count = titanic.groupby([<span class="string">'Sex'</span>, <span class="string">'AgeGroup'</span>, <span class="string">'Pclass'</span>])[<span class="string">'PassengerId'</span>].count()</div><div class="line">final_count.sort_values(ascending=<span class="keyword">False</span>).plot.bar()</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">final_count = titanic.groupby([<span class="string">'Sex'</span>, <span class="string">'AgeGroup'</span>, <span class="string">'Pclass'</span>])[<span class="string">'PassengerId'</span>].count()</span><br><span class="line">final_count.sort_values(ascending=<span class="keyword">False</span>).plot.bar()</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x11a68fc90&gt;
 </code></pre><p><img src="output_64_1.png" alt="png"></p>
 <p>综合性别、年龄段、船舱等级纬度后样本数量分布如图（已过滤无年龄数据的样本）</p>
 <p>人数最多的是三等舱的男性中年乘客有200位左右，而人数最少的是三等舱的女性老人</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">final_survival_rate = titanic.groupby([<span class="string">'Sex'</span>, <span class="string">'AgeGroup'</span>, <span class="string">'Pclass'</span>])[<span class="string">'Survived'</span>].mean()</div><div class="line">final_survival_rate.sort_values(ascending=<span class="keyword">False</span>).plot.bar()</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">final_survival_rate = titanic.groupby([<span class="string">'Sex'</span>, <span class="string">'AgeGroup'</span>, <span class="string">'Pclass'</span>])[<span class="string">'Survived'</span>].mean()</span><br><span class="line">final_survival_rate.sort_values(ascending=<span class="keyword">False</span>).plot.bar()</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x11a418650&gt;
 </code></pre><p><img src="output_66_1.png" alt="png"></p>
 <p>综合性别、年龄段、船舱等级纬度后幸存率分布如图（已过滤无年龄数据的样本）</p>
 <p>其中一等舱的男孩和二等舱的女孩幸存率都是100%，三等舱的女性老人幸存率也达到100%，由于样本过少参考意义有限</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sns.factorplot(x=<span class="string">'AgeGroup'</span>, y=<span class="string">'Survived'</span>, col=<span class="string">"Pclass"</span>, data=titanic, hue=<span class="string">'Sex'</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sns.factorplot(x=<span class="string">'AgeGroup'</span>, y=<span class="string">'Survived'</span>, col=<span class="string">"Pclass"</span>, data=titanic, hue=<span class="string">'Sex'</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x118e368d0&gt;
 </code></pre><p><img src="output_68_1.png" alt="png"></p>
 <p>综合性别、年龄段、船舱等级纬度后幸存率分布如图（已过滤无年龄数据的样本）</p>
 <p>通过该图可以明显看出性别对于幸存率的影响最为明显，随着船舱等级降低幸存率也在降低以及各年龄段在各等级船舱的幸存率分布</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">final_result = pd.DataFrame(&#123;<span class="string">'survival'</span>:final_survival_rate, <span class="string">'count'</span>:final_count&#125;)</div><div class="line"></div><div class="line"><span class="keyword">print</span> final_result.sort_values(<span class="string">'survival'</span>, ascending=<span class="keyword">False</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">final_result = pd.DataFrame(&#123;<span class="string">'survival'</span>:final_survival_rate, <span class="string">'count'</span>:final_count&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> final_result.sort_values(<span class="string">'survival'</span>, ascending=<span class="keyword">False</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>                        count  survival
 Sex    AgeGroup Pclass                 
 male   child    1           4  1.000000
@@ -449,5 +530,33 @@ male   child    3          43  0.232558
 <p>该数据集样本并不是全部数据，从Titanic幸存者报告来看，真正的幸存乘客有492名，而数据集中的幸存乘客为340位；但是该数据集已经占了总体的70%所以我们的分析接近总体数据的分析。</p>
 <p>在涉及到年龄变量的统计时过滤掉了没有年龄数据的乘客，占样本比例的20%左右，对分析结果有较小的影响。</p>
 <p>还有一些比如获救船员数据，是否有宠物获救占据救生艇位置，乘客身体状况以及舱位与船舱出口距离等应该都对幸存率有影响。</p>
-<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p><a href="http://www.titanicfacts.net/titanic-survivors.html" target="_blank" rel="external">Titanicfacts</a></p>
-</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2017-05-18</span><i class="fa fa-tag"></i><a href="/tags/数据分析案例/" title="数据分析案例" class="tag">数据分析案例 </a></div></div></div></div><div class="share"><div class="evernote"> <a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></div><div class="weibo"> <a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></div><div class="twitter"> <a href="http://twitter.com/home?status=,http://gsisland.com/2017/05/18/泰坦尼克号幸存概率分析/,G's island,泰坦尼克号幸存概率分析,;" class="fa fa-twitter"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a role="navigation" href="/2017/05/22/pandas快速数据可视化/" title="pandas快速数据可视化" class="btn">上一篇</a></li><li class="next pagbuttons"><a role="navigation" href="/2016/01/27/hello-world/" title="Hello World" class="btn">下一篇</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p><a href="http://www.titanicfacts.net/titanic-survivors.html" target="_blank" rel="noopener">Titanicfacts</a></p>
+
+            </div>
+</article>
+
+                </main>
+                <aside class="aside">
+                    <section class="aside-section">
+                        
+                    </section>
+                    <section class="aside-section">
+                        
+    <h1>Archives</h1>
+
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a></li></ul>
+
+
+                    </section>
+                    <section class="aside-section tag">
+                        
+    <h1>Tags</h1>
+
+    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/pandas/">pandas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据分析案例/">数据分析案例</a></li></ul>
+
+                    </section>
+                </aside>
+        </div>
+    </body>
+
+</html>

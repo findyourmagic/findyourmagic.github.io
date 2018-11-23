@@ -1,17 +1,98 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Daniel"><title>pandas快速数据可视化 · G's island</title><meta name="description" content="Pandas 是 python 中最常用的数据统计包，而数据可视化一般是使用 matplotlib 或者 seaborn。
-其实 Pandas 已经内置了 matplotlib / pylab 用于数据可视化的方法，在分析一维和二维数据时非常方便。
-“pandas.DataFrame.plot Ma"><meta name="keywords" content="hexo,前端,node,统计"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">G's island</a></h3><div class="description"><p>G's island.</p></div></div></div><ul class="social-links"></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai</a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li></div><div class="information"><div class="back_btn"><li><a onclick="window.history.go(-1)" class="fa fa-chevron-left"> </a></li></div><div class="avatar"><img src="https://avatars1.githubusercontent.com/u/3908212?v=3&amp;s=100"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>pandas快速数据可视化</a></h3></div><div class="post-content"><p>Pandas 是 python 中最常用的数据统计包，而数据可视化一般是使用 matplotlib 或者 seaborn。</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta name="keywords" content="Jax">
+    <title>
+        Jax.show
+    </title>
+    <!-- favicon -->
+    
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- highlight -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/github-gist.min.css">
+    <script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad()
+    </script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-infinite-scroll@1.0.0/dist/hexo-infinite-scroll.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-infinite-scroll@1.0.0/dist/hexo-infinite-scroll.min.js"></script>
+    <script>
+        infiniteScroll()
+
+        // for mobile menu
+        $(function () {
+            $('.social-button').click(function () {
+                if ($('.social-links').hasClass('hide-links')) {
+                    $('.social-links').removeClass('hide-links')
+                } else {
+                    $('.social-links').addClass('hide-links')
+                }
+            })
+        })
+    </script>
+</head>
+
+    <body style="background: url(https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/button-bg.png) #f3f3f3">
+        <div class="container">
+            <header class="header">
+    <h1 class="title">
+        <a href="/" class="logo">
+            Jax.show
+        </a>
+    </h1>
+    <h2 class="desc">
+        Coding changes the world.
+    </h2>
+
+    <nav class="links">
+        <button class="social-button">
+            menu
+        </button>
+        <ul class="social-links hide-links">
+            
+                <li>
+                    <a href="https://github.com/findyourmagic">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
+    </nav>
+</header>
+                <main class="main">
+                    <article class="post">
+    
+            <h2 class="post-title">
+                pandas快速数据可视化
+            </h2>
+            <ul class="post-date">
+                <li>
+                    2017-05-22
+                </li>
+                <li>
+                    Jax
+                </li>
+            </ul>
+            <div class="post-content">
+                <p>Pandas 是 python 中最常用的数据统计包，而数据可视化一般是使用 matplotlib 或者 seaborn。</p>
 <p>其实 Pandas 已经内置了 matplotlib / pylab 用于数据可视化的方法，在分析一维和二维数据时非常方便。</p>
 <p>“pandas.DataFrame.plot Make plots of DataFrame using matplotlib / pylab.”</p>
+<a id="more"></a>
 <h2 id="如何调用"><a href="#如何调用" class="headerlink" title="如何调用"></a>如何调用</h2><p><strong>DataFrame.boxplot</strong></p>
 <p><strong>DataFrame.hist</strong></p>
 <p><strong>DataFrame.plot</strong></p>
 <p>其中 DataFrame.plot 既是可调用的方法也是一个命名空间。</p>
 <p>既可以使用 DataFrame.plot(kind=kind) 也可以使用 DataFrame.plot.kind 来调用。</p>
 <p>例：
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df.plot(kind=&apos;line&apos;)</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.plot(kind=&apos;line&apos;)</span><br></pre></td></tr></table></figure></p>
 <p>等价于 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df.plot.line()</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.plot.line()</span><br></pre></td></tr></table></figure>
 <h3 id="DataFrame-plot-图表类型"><a href="#DataFrame-plot-图表类型" class="headerlink" title="DataFrame.plot 图表类型"></a>DataFrame.plot 图表类型</h3><p>‘line’ : 折线图 (default)</p>
 <p>‘bar’ : 条形图</p>
 <p>‘barh’ : 垂直条形图</p>
@@ -24,10 +105,10 @@
 <p>‘scatter’ : 散点图</p>
 <p>‘hexbin’ : 六边形图</p>
 <h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>引入需要使用的包：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</div><div class="line">%matplotlib inline</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line">%matplotlib inline</span><br></pre></td></tr></table></figure>
 <p>构建一个用于演示的简单数据集 students：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">students = pd.DataFrame(&#123;</div><div class="line">    <span class="string">'Name'</span>: [<span class="string">'Hou Yi'</span>, <span class="string">'Jiang Ziya'</span>, <span class="string">'Tai Yi'</span>, <span class="string">'Zhao Yun'</span>, <span class="string">'Liu Bei'</span>],</div><div class="line">    <span class="string">'Id'</span>: range(<span class="number">5</span>),</div><div class="line">    <span class="string">'Math'</span>: np.random.randint(<span class="number">55</span>, <span class="number">100</span>, size=<span class="number">5</span>),</div><div class="line">    <span class="string">'Physics'</span>: np.random.randint(<span class="number">55</span>, <span class="number">100</span>, size=<span class="number">5</span>),</div><div class="line">    <span class="string">'Biology'</span>: np.random.randint(<span class="number">55</span>, <span class="number">100</span>, size=<span class="number">5</span>),</div><div class="line">    <span class="string">'Group'</span>: [<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'A'</span>, <span class="string">'A'</span>, <span class="string">'B'</span>],</div><div class="line">    <span class="string">'Age'</span>: np.random.randint(<span class="number">18</span>, <span class="number">20</span>, size=<span class="number">5</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">students</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">students = pd.DataFrame(&#123;</span><br><span class="line">    <span class="string">'Name'</span>: [<span class="string">'Hou Yi'</span>, <span class="string">'Jiang Ziya'</span>, <span class="string">'Tai Yi'</span>, <span class="string">'Zhao Yun'</span>, <span class="string">'Liu Bei'</span>],</span><br><span class="line">    <span class="string">'Id'</span>: range(<span class="number">5</span>),</span><br><span class="line">    <span class="string">'Math'</span>: np.random.randint(<span class="number">55</span>, <span class="number">100</span>, size=<span class="number">5</span>),</span><br><span class="line">    <span class="string">'Physics'</span>: np.random.randint(<span class="number">55</span>, <span class="number">100</span>, size=<span class="number">5</span>),</span><br><span class="line">    <span class="string">'Biology'</span>: np.random.randint(<span class="number">55</span>, <span class="number">100</span>, size=<span class="number">5</span>),</span><br><span class="line">    <span class="string">'Group'</span>: [<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'A'</span>, <span class="string">'A'</span>, <span class="string">'B'</span>],</span><br><span class="line">    <span class="string">'Age'</span>: np.random.randint(<span class="number">18</span>, <span class="number">20</span>, size=<span class="number">5</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">students</span><br></pre></td></tr></table></figure>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -105,46 +186,74 @@
 <p>Biology：生物成绩</p>
 <p>Physics：物理成绩</p>
 <p>对于成绩这样的变量，箱线图是非常合适的可视化方案</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">students[<span class="string">'Math'</span>].plot.box()</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">students[<span class="string">'Math'</span>].plot.box()</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1201a2c50&gt;
 </code></pre><p><img src="output_12_1.png" alt="png"></p>
 <p>可以一次性把所科目的成绩都可视化出来</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">students[[<span class="string">'Math'</span>, <span class="string">'Biology'</span>, <span class="string">'Physics'</span>]].plot.box()</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">students[[<span class="string">'Math'</span>, <span class="string">'Biology'</span>, <span class="string">'Physics'</span>]].plot.box()</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x11e5d6690&gt;
 </code></pre><p><img src="output_14_1.png" alt="png"></p>
 <p>也可以通过平均值对比下各科成绩的情况</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">students[[<span class="string">'Math'</span>, <span class="string">'Biology'</span>, <span class="string">'Physics'</span>]].mean().plot.line()</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">students[[<span class="string">'Math'</span>, <span class="string">'Biology'</span>, <span class="string">'Physics'</span>]].mean().plot.line()</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x11d774fd0&gt;
 </code></pre><p><img src="output_16_1.png" alt="png"></p>
 <p>可以直接通过 by 参数查看 groupby 分组信息后的成绩分布</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">students[[<span class="string">'Math'</span>, <span class="string">'Biology'</span>, <span class="string">'Physics'</span>, <span class="string">'Group'</span>]].boxplot(by=<span class="string">'Group'</span>, figsize=(<span class="number">12</span>,<span class="number">6</span>))</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">students[[<span class="string">'Math'</span>, <span class="string">'Biology'</span>, <span class="string">'Physics'</span>, <span class="string">'Group'</span>]].boxplot(by=<span class="string">'Group'</span>, figsize=(<span class="number">12</span>,<span class="number">6</span>))</span><br></pre></td></tr></table></figure>
 <pre><code>array([[&lt;matplotlib.axes._subplots.AxesSubplot object at 0x1203b6f50&gt;,
         &lt;matplotlib.axes._subplots.AxesSubplot object at 0x1207edb10&gt;],
        [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x120875990&gt;,
         &lt;matplotlib.axes._subplots.AxesSubplot object at 0x1208e72d0&gt;]], dtype=object)
 </code></pre><p><img src="output_18_1.png" alt="png"></p>
 <p>或者是 groupby 年龄的成绩分布</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">students[[<span class="string">'Math'</span>, <span class="string">'Biology'</span>, <span class="string">'Physics'</span>, <span class="string">'Age'</span>]].boxplot(by=<span class="string">'Age'</span>, figsize=(<span class="number">12</span>,<span class="number">6</span>))</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">students[[<span class="string">'Math'</span>, <span class="string">'Biology'</span>, <span class="string">'Physics'</span>, <span class="string">'Age'</span>]].boxplot(by=<span class="string">'Age'</span>, figsize=(<span class="number">12</span>,<span class="number">6</span>))</span><br></pre></td></tr></table></figure>
 <pre><code>array([[&lt;matplotlib.axes._subplots.AxesSubplot object at 0x1203b6fd0&gt;,
         &lt;matplotlib.axes._subplots.AxesSubplot object at 0x120cba5d0&gt;],
        [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x120d40450&gt;,
         &lt;matplotlib.axes._subplots.AxesSubplot object at 0x120da5d50&gt;]], dtype=object)
 </code></pre><p><img src="output_20_1.png" alt="png"></p>
 <p>如果想按两个条件来查看分布，可以给 by 参数传递一个数组(实例数据较少，可能不会展示出全部纬度的图)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">students[[<span class="string">'Math'</span>, <span class="string">'Biology'</span>, <span class="string">'Physics'</span>, <span class="string">'Age'</span>, <span class="string">'Group'</span>]].boxplot(by=[<span class="string">'Age'</span>, <span class="string">'Group'</span>], figsize=(<span class="number">12</span>,<span class="number">6</span>))</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">students[[<span class="string">'Math'</span>, <span class="string">'Biology'</span>, <span class="string">'Physics'</span>, <span class="string">'Age'</span>, <span class="string">'Group'</span>]].boxplot(by=[<span class="string">'Age'</span>, <span class="string">'Group'</span>], figsize=(<span class="number">12</span>,<span class="number">6</span>))</span><br></pre></td></tr></table></figure>
 <pre><code>array([[&lt;matplotlib.axes._subplots.AxesSubplot object at 0x1217750d0&gt;,
         &lt;matplotlib.axes._subplots.AxesSubplot object at 0x123681d50&gt;],
        [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x1238b7bd0&gt;,
         &lt;matplotlib.axes._subplots.AxesSubplot object at 0x123929510&gt;]], dtype=object)
 </code></pre><p><img src="output_22_1.png" alt="png"></p>
 <p>也可以通过数据的处理来查看样本中的数量分布，比如按分组查看样本数量分布</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">students.groupby(<span class="string">'Group'</span>)[<span class="string">'Id'</span>].count().plot.pie(figsize=(<span class="number">6</span>,<span class="number">6</span>))</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">students.groupby(<span class="string">'Group'</span>)[<span class="string">'Id'</span>].count().plot.pie(figsize=(<span class="number">6</span>,<span class="number">6</span>))</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x120b0ee10&gt;
 </code></pre><p><img src="output_24_1.png" alt="png"></p>
 <p>或者同时按分组和年龄查看样本数量分布</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">students.groupby([<span class="string">'Group'</span>, <span class="string">'Age'</span>])[<span class="string">'Id'</span>].count().plot.pie(figsize=(<span class="number">6</span>,<span class="number">6</span>))</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">students.groupby([<span class="string">'Group'</span>, <span class="string">'Age'</span>])[<span class="string">'Id'</span>].count().plot.pie(figsize=(<span class="number">6</span>,<span class="number">6</span>))</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x11ec2ca90&gt;
 </code></pre><p><img src="output_26_1.png" alt="png"></p>
 <p>其它类型的图表使用方法基本也都类似，选择自己需要的表现形式即可。</p>
 <p>如果对于可视化的需求比较简单，直接使用 pandas 比使用 matplotlib 要简洁畅快不少。</p>
-</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2017-05-22</span><i class="fa fa-tag"></i><a href="/tags/pandas/" title="pandas" class="tag">pandas </a></div></div></div></div><div class="share"><div class="evernote"> <a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></div><div class="weibo"> <a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></div><div class="twitter"> <a href="http://twitter.com/home?status=,http://gsisland.com/2017/05/22/pandas快速数据可视化/,G's island,pandas快速数据可视化,;" class="fa fa-twitter"></a></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a role="navigation" href="/2017/05/18/泰坦尼克号幸存概率分析/" title="泰坦尼克号幸存概率分析" class="btn">下一篇</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
+
+            </div>
+</article>
+
+                </main>
+                <aside class="aside">
+                    <section class="aside-section">
+                        
+                    </section>
+                    <section class="aside-section">
+                        
+    <h1>Archives</h1>
+
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a></li></ul>
+
+
+                    </section>
+                    <section class="aside-section tag">
+                        
+    <h1>Tags</h1>
+
+    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/pandas/">pandas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据分析案例/">数据分析案例</a></li></ul>
+
+                    </section>
+                </aside>
+        </div>
+    </body>
+
+</html>
